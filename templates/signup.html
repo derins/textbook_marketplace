@@ -1,0 +1,93 @@
+{% load static %}
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script>
+        $( function() {
+          $( document ).tooltip();
+          } );
+        </script>
+    
+    <body>
+        <div class="signup-form">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form">
+                    
+                    <h2>Sign Up</h2>
+                    
+                    <a class = "req" > * indicates required</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form.first_name.label_tag }}
+                            {{ form.first_name }}
+                        </div>
+                        
+                        <div class="col-md-6">
+                            {{ form.last_name.label_tag }}
+                            {{ form.last_name }}
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                        </div>
+                    </div>
+                    
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="popup">
+                            
+                                {{ form.password1.label_tag }}
+                                {{ form.password1 }}
+                                <span class="wordpass">
+                                    Your password must:
+                                    <li>have at least 8 characters.</li>
+                                    <li>have one letter.</li>
+                                    <li>not be a commonly used password.</li>
+                                    <li>not be too similar to your other personal info.</li>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.password2.label_tag }}
+                            {{ form.password2 }}
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="popup">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                                <span class="mail">example@example.com</span>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="popup">
+                                {{ form.phone.label_tag }}
+                                {{ form.phone }}
+                                <span class="number">Format: xxx-xxx-xxxx</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+                    </div>
+                    <div class="text-center">Already have an account? <a href="{% url 'login' %}">Log In</a></div>
+                </div>
+                
+            </form>
+        </div>
+    </body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static '/textbookFinder/signup.css' %}" />

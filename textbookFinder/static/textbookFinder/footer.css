@@ -1,0 +1,129 @@
+@media (max-width: 768px) {
+	.Footer {
+		padding-left: 32px;
+		padding-right: 32px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		
+		background-color: white;
+		bottom: 0;
+		opacity: 0.6;
+		border: solid;
+		border-width: 5px;
+		border-color: #baa282;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Footer-bottomBar {
+		vertical-align: middle;
+	}
+
+	.leftFooter {
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		padding-right: 100px;
+	}
+
+	.Footer-firstCol {
+		margin-top: auto;
+		margin-bottom: auto;
+		font-style: bold;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 10px;
+	}
+
+	.Footer-firstCol a {
+		display: inline-block;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 5px;
+		vertical-align: middle;
+		font-size: 24px;
+	}
+
+	.Footer-secondCol {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-style: bold;	
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Footer-secondCol a {
+		font-size: 24px;
+		vertical-align: center;
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	.Footer-secondCol .Footer-account-Footer-link {
+		font-weight: bold;
+	}
+}
+
+@media (min-width: 768px) {
+	.Footer {
+		padding-left: 32px;
+		padding-right: 32px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		
+		background-color: white;
+		bottom: 0;
+		opacity: 0.6;
+		border: solid;
+		border-width: 5px;
+		border-color: #baa282;
+		text-align: center;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.Footer-bottomBar {
+		vertical-align: middle;
+	}
+
+	.leftFooter {
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		padding-right: 100px;
+	}
+
+	.Footer-firstCol {
+		margin-top: auto;
+		margin-bottom: auto;
+		font-style: bold;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Footer-firstCol a {
+		display: inline-block;
+		margin-left: 10px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+
+	.Footer-secondCol {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-style: bold;	
+		display: flex;
+		flex-direction: column;
+		text-align: right;
+	}
+
+	.Footer-secondCol a {
+		vertical-align: center;
+		display: block;
+	}
+
+	.Footer-secondCol .Footer-account-Footer-link {
+		font-weight: bold;
+	}
+}

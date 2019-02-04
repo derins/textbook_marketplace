@@ -1,0 +1,201 @@
+@import "header.css";
+@import "footer.css";
+@import "header.css";
+@import "search.css";
+@import "listing.css";
+@import "home.css";
+
+body {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	/*background-size: cover;*/
+	background-color: black;
+}
+
+a {
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: lighter;
+	letter-spacing: 2px ;
+	color: black;
+}
+
+a:hover {
+    color: brown;
+    text-decoration: underline;
+}
+
+.PageContent {
+	background-color: white;
+	/*opacity: 0.6;*/
+/*	margin-right: 5px;
+	margin-left: 5px;*/
+	/*margin-bottom: 60px;*/
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	border: solid;
+	border-width: 5px;
+	border-color: #baa282;
+}
+
+.jumbotron {
+	border: solid;
+	border-width: 5px;
+	border-color: #baa282;
+}
+@media (max-width: 768px) {
+	.PageContent {
+		margin-bottom: 150px;
+	}
+}
+
+.signupcon {
+	background-color: white;
+	opacity: 0.9;
+	border: solid;
+	border-width: 5px;
+	border-color: #baa282;
+	height: auto;
+	margin: auto;
+	padding: auto;
+}
+
+.Search {
+	background-color: black;
+	opacity: 0.6;
+	width: auto;
+	color: white;
+}
+
+.searchDiv {
+	vertical-align: middle;
+}
+.Search-mainBar {
+	text-align: center;
+	font-size: 25px;
+}
+
+.Search-searchBy {
+	width: auto;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 2px;
+}
+
+.Searh-searchBy option {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.Search-searchField {
+	font-size: 20px;
+}
+h4 {
+	font-size: 20px;
+	text-align:center;
+	width: auto;
+}
+h6 {
+	font-size: 20px;
+	text-align: center;
+}
+
+.Search-filters {
+	width: auto;
+}
+
+.Search-filters input {
+	font-size: 20px;
+	text-align: center;
+}
+
+.submitbutton {
+	font-size: 20px;
+}
+
+.accountdiv {
+	padding-left: 100px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.accountdiv p {
+	font-weight: bold;
+}
+
+.usernamediv {
+	display: block;
+}
+.puser {
+	display: inline-block;
+}
+.p1user {
+	display: inline-block;
+	padding-left: 5px;
+}
+
+.firstnamediv {
+	display: block;
+}
+.pfirst {
+	display: inline-block;
+}
+.p1first {
+	display: inline-block;
+	padding-left: 5px;
+}
+
+.lastnamediv {
+	display: block;
+}
+.plast {
+	display: inline-block;
+}
+.p1last {
+	display: inline-block;
+	padding-left: 5px;
+}
+
+.emaildiv {
+	display: block;
+}
+.pemail {
+	display: inline-block;
+}
+.p1email {
+	display: inline-block;
+	padding-left: 5px;
+}
+
+.phonediv {
+	display: block;
+}
+.pphone {
+	display: inline-block;
+}
+.p1phone {
+	display: inline-block;
+	padding-left: 5px;
+}
+.editdiv {
+	padding-left: 100px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+br {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: lighter;
+	letter-spacing: 2px ;
+	color: black;
+}
+
+#id_password {
+	display: none;
+}
+.helptext {
+	display: none;
+}
+label[for=id_password] {
+	display: none;
+}

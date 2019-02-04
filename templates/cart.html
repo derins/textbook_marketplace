@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Saved Items{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'textbookFinder/index.css' %}">
+<h4 style = "padding: 8pt">
+	Saved Items
+</h4>
+<div class="card-columns" style = "padding: 8pt">
+	{% for book in object_list %}
+		<div class="card" style="width: 18rem;">
+			 <div class="card-body">
+				 <h5 class="card-title">{{ book.name}}</h5>
+				 <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
+				 {% if book.is_sold == True %}
+				  <p class="card-text">Sold.</p>
+					{% else %}
+					<p class="card-text">Price: ${{book.price}}</p>
+					{% endif %}
+					<a href="{% url 'textbookFinder:listing' book.id %}" class="card-link">See more info</a>
+					<a href="{% url 'textbookFinder:cart_remove' book.id %}" class="card-link">Remove Item</a>
+			</div>
+		</div>
+		{% endfor %}
+</div>
+
+{% endblock %}

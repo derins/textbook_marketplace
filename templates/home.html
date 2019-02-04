@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+ <link rel="stylesheet" type="text/css" href="{% static 'textbookFinder/common.css' %}">
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="searchdiv">
+	<h1 class="head">Welcome</h1>
+	{% if user.is_authenticated %}
+	  Hi {{ user.username }}!
+	  <p><a href="{% url 'logout' %}">Log out</a></p>
+	{% else %}
+	<div class="loginsignup">
+	  <p>You are not logged in</p>
+	  <a href="{% url 'login' %}">Log In</a> |
+	  <a href="{% url 'signup' %}">Sign Up</a>
+	</div>
+</div>
+
+
+
+{% endif %}
+{% endblock %}

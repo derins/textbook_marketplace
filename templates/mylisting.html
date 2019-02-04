@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'textbookFinder/index.css' %}">
+<h1>
+	TextBook Finder
+</h1>
+<h2 class = "Index-header">
+	My Listings
+</h2>
+<div class="Index">
+	{% for book in object_list %}
+		<li class="Index-listing">
+			<a href="{% url 'textbookFinder:listing' book.id %}" class="Index-listing-item">
+					{% if book.is_sold == True %}
+		    	<p class = "Index-listing-item-text"><b>{{"This book has already been sold!"}}</b><br><br>{{ book.name}}{{", by "}}{{book.author}} <br> Price: {{book.price}}</p>
+					{% else %}
+
+					<p class = "Index-listing-item-text">{{ book.name}}{{", by "}}{{book.author}} <br> Price: {{book.price}}</p>
+					{% endif %}
+					</a>
+		</li>
+		{% endfor %}
+</div>
+
+{% endblock %}

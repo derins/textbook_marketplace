@@ -1,0 +1,91 @@
+.Listing {
+	padding-left: 32px;
+	padding-right: 32px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	display: flex;
+}
+
+.Listing-leftCol {
+	width: 60%;
+}
+
+.Listing-rightCol {
+	width: 65%;
+
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.Listing-image {
+	width: 100%;
+}
+
+.Listing-priceArea {
+	margin-top: 32px;
+
+	padding: 5px;
+	border: solid;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.Listing-interestButtons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.Listing-saveListing {
+	background-color: #4FEFEF;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.Listing-saveListing {
+	margin-top: 5px;
+}
+
+.Listing-deleteListing {
+	background-color: #4FEFEF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.Listing-deleteListing {
+	margin-top: 5px;
+}
+
+.Listing-markListing {
+	background-color: #4FEFEF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.Listing-markListing {
+	margin-top: 5px;
+}
+
+.Seller {
+	margin-top: 32px;
+
+	padding: 5px;
+	border: solid;
+}
+
+.Seller-contactInfo {
+	margin-top: 5px;
+}
+
+.Seller > h2,
+.Seller > p,
+.Seller-contactInfo > h4,
+.Seller-contactInfo > p {
+	margin: 0;
+}

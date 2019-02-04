@@ -1,0 +1,150 @@
+@media (max-width: 768px) {
+	.Search {
+		padding-left: 32px;
+		padding-right: 32px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+
+	.Search-Filters > h4 {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.Search-searchField {
+		width: 100%;
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.Search-submit {
+		font-size: 20px;
+	}
+
+	.Sort-check + span {
+		margin-top: 4px;
+		font-size: 15px;
+	}
+
+	.Search-filters {
+		width: auto;
+	}
+
+	.Search-filters > h4 {
+		font-size: 35px;
+		margin-bottom: 0;
+	}
+
+	.Search-filters input {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.Filters {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.Filters-priceRange,
+	.Filters-bookType,
+	.Filters-editionNumber {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.Filters-priceRange > h6,
+	.Filters-bookType > h6,
+	.Filters-editionNumber > h6 {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.Filters-types {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Filters-typeChoice {
+		font-size: 25px;
+	}
+
+	.Filters-bookType,
+	.Filters-types {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+
+@media (min-width: 768px) {
+	.Search {
+		padding-left: 32px;
+		padding-right: 32px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+
+	.Search-Filters > h4 {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.Search-searchField {
+		width: 60%;
+	}
+
+	.Search-submit {
+		font-size: 20px;
+	}
+
+	.Search-sortBy {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 15px;
+	}
+
+	.Sort-check {
+		margin-left: 20px;
+		align-self: center;
+	}
+
+	.Sort-check + span {
+		margin-top: 4px;
+		font-size: 15px;
+	}
+
+	.Search-filters {
+		width: auto;
+	}
+
+	.Search-filters input {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.Filters {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.Filters-priceRange > h6,
+	.Filters-bookType > h6,
+	.Filters-editionNumber > h6 {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.Filters-types {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.Filters-bookType,
+	.Filters-types {
+		display: flex;
+		flex-direction: column;
+	}
+}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+ <link rel="stylesheet" type="text/css" href="{% static 'textbookFinder/common.css' %}">
+
+{% block title %}My Account{% endblock %}
+
+{% block content %}
+<div style = "padding-top: 30pt; padding-bottom: 30pt; background: #d4d4d4">
+    <div class = "card" style = "margin:auto; width: 70%; padding: 8pt">
+        <h3 style = "padding: 8pt; margin:auto;">Account Information</h3>
+        <div>
+			<div class="usuernamediv">
+		  		<p class="puser"> Username: {{ user.username }}</p>
+		  	</div>
+		  	<div class="firstnamediv">
+		  		<p class="pfirst"> First Name: {{ user.first_name }}</p>
+		  	</div>
+		  	<div class="lastnamediv">
+		  		<p class="plast"> Last Name: {{ user.last_name }}</p>
+		  	</div>
+		  	<div class="emaildiv">
+		  		<p class="pemail"> Email: {{ user.email }}</p>
+		  	</div>
+	      	<div class="phonediv">
+	      		<p class ="pphone"> Phone Number: {{ user.phone }}</p>
+	    </div>
+	  	<a href="{% url 'textbookFinder:edit' user.id %}"><button class="btn btn-primary btn-block" style = " margin: auto; padding: 8pt">Edit Account</button></a>
+	</div>
+    </div>
+  </div>
+</div>
+<!-- <div class="accountdiv">
+	<h2>My Account</h2>
+	<div>
+		<div class="usuernamediv">
+	  		<p class="puser"> Username: </p><p1 class="p1user">{{ user.username }}</p1>
+	  	</div>
+	  	<div class="firstnamediv">
+	  		<p class="pfirst"> First Name: </p><p1 class="p1first">{{ user.first_name }}</p1>
+	  	</div>
+	  	<div class="lastnamediv">
+	  		<p class="plast"> Last Name: </p><p1 class="p1last">{{ user.last_name }}</p1>
+	  	</div>
+	  	<div class="emaildiv">
+	  		<p class="pemail"> Email: </p><p1 class="p1email">{{ user.email }}</p1>
+	  	</div>
+      	<div class="phonediv">
+      		<p class ="pphone"> Phone Number: </p><p1 class="p1phone">{{ user.phone }}</p1>
+      	</div>
+	  <a href="{% url 'textbookFinder:edit' user.id %}"><button>Edit Account</button></a>
+	</div> 
+</div>-->
+{% endblock %}

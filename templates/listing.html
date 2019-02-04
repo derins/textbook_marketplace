@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="Listing" style = "padding-top: 30pt; padding-bottom: 30pt; background: #d4d4d4">
+    <div class = "card" style = "margin:auto; width: 70%; padding: 8pt">
+    	{% if request.GET.saved %}
+    		{% if request.GET.saved == 'true' %}
+    			<div style="background-color: lime; text-align: center;">
+					<p>Item Successfully Saved!</p>
+				</div>
+			{% else %}
+				<div style="background-color: red; text-align: center;">
+					<p>Item Already In Saved-Items List</p>
+				</div>
+			{% endif %}
+		{% endif %}
+
+		{% if request.GET.sent %}
+    		{% if request.GET.sent == 'true' %}
+    			<div style="background-color: lime; text-align: center;">
+					<p>Email Successfully Sent!</p>
+				</div>
+			{% else %}
+				<div style="background-color: red; text-align: center;">
+					<p>Error Sending Email</p>
+				</div>
+			{% endif %}
+		{% endif %}
+    	<h1 style = "padding: 8pt; margin:auto;">Book Details</h1>
+    	<div style = "display: flex; flex-direction: row; justify-content: space-around;">
+    		<div>
+    			<h3 class="Listing-title">Title: {{ book.name }}</h3>
+				<p class="Listing-author">Author: {{ book.author }}</p>
+				<p class="Listing-ISBN">ISBN Number: {{ book.isbn_number }}</p>
+
+				{% if book.book_type == "hardCover" %}
+					<p class="Listing-bookType">Book Type: Hard Cover</p>
+				{% elif book.book_type == "paperBack" %}
+					<p class="Listing-bookType">Book Type: Paper Back</p>
+				{% elif book.book_type == "looseLeaf" %}
+					<p class="Listing-bookType">Book Type: Loose Leaf</p>
+				{% elif book.book_type == "pdf" %}
+					<p class="Listing-bookType">Book Type: PDF</p>
+				{% else %}
+					<p class="Listing-bookType">Book Type: {{ book.book_type }}</p>
+				{% endif %}
+				<p class="Listing-className">For Class: {{ book.subject }}</p>
+				<p class="Listing-editionNum">Edition Number: {{ book.edition_number }}</p>
+				<p class="Listing-datePosted">Date Posted: {{ book.date_posted }}</p>
+    		</div>
+
+    		<div class="Listing-priceArea" style="align-self: center">
+				<h3 class="Listing-price">Price: ${{ book.price }}</h3>
+				<div class="Listing-interestButtons" style="display: flex; flex-direction: column;">
+					 {% if user == book.seller %}
+					 	<a href="{% url 'textbookFinder:remove_listing' book.id %}" class = "Listing-deleteListing">Remove Listing</a>
+						{% if book.is_sold == True %}
+							<a href="{% url 'textbookFinder:mark_sold' book.id %}" class = "Listing-markListing">Resume Selling</a>
+						{% else %}
+						 	<a href="{% url 'textbookFinder:mark_sold' book.id %}" class = "Listing-markListing">Mark as Sold</a>
+					 	{% endif %}
+					 	<a href="{% url 'textbookFinder:edit_listing' book.id %}" class = "Listing-markListing">Edit Listing</a>
+					 {% else %}
+					 	<a href="{% url 'textbookFinder:cart_add' book.id %}" class="Listing-saveListing">Save Item</a>
+					 {% endif %}
+				</div>
+			</div>
+    	</div>
+    </div>
+
+    <div class = "card" style = "margin:auto; width: 70%; padding: 8pt;">
+        <h1 style = "padding: 8pt; margin:auto;">Seller Info</h1>
+        <div style="display: flex; flex-direction: row; justify-content: space-around;">
+        	<div>
+	        	<p class="Seller-name">Username: {{ book.seller.username }}</p>
+	        	<p class="Seller-name">Seller Name: {{ book.seller.first_name }} {{ book.seller.last_name }}</p>
+	        	<form action="{%  url 'textbookFinder:send_email' book.id %}" method="post">
+	        		{% csrf_token %}
+	        		<input type="hidden" name="fromEmail" value="{{ user.email }}">
+	        		<input type="hidden" name="buyerName" value="{{ user.first_name }}">
+	        		<button type="submit" class="btn btn-primary">Contact Seller</button>
+	        	</form>
+	        </div>
+        	<div>
+        		<p class="Seller-email">Email: {{book.seller.email}}</p>
+        		<p class="Seller-phone">Phone Number: {{book.seller.phone}}</p>
+        	</div>
+        </div>
+    </div>
+	<!-- <div class="Listing-leftCol">
+
+		<div class="Listing-sellerInfo Seller">
+            <h2>Seller Info: </h2>
+			<p class="Seller-name">Name: {{ book.seller.username }}</p>
+			<br>
+            <h2>Contact Info: </h2>
+            <p class="Seller-email">Email: {{book.seller.email}}</p>
+            <p class="Seller-phone">Phone Number: {{book.seller.phone}}</p>
+		</div>
+	</div>
+	<div class="Listing-rightCol">
+		<div class="Listing-info">
+			<h1 class="Listing-title">Title: {{ book.name }}</h1>
+			<p class="Listing-author">Author: {{ book.author }}</p>
+			<p class="Listing-ISBN">ISBN: {{ book.isbn_number }}</p>
+
+			{% if book.book_type == "hardCover" %}
+				<p class="Listing-bookType">Book Type: Hard Cover</p>
+			{% elif book.book_type == "paperBack" %}
+				<p class="Listing-bookType">Book Type: Paper Back</p>
+			{% elif book.book_type == "looseLeaf" %}
+				<p class="Listing-bookType">Book Type: Loose Leaf</p>
+			{% elif book.book_type == "pdf" %}
+				<p class="Listing-bookType">Book Type: PDF</p>
+			{% else %}
+				<p class="Listing-bookType">Book Type: {{ book.book_type }}</p>
+			{% endif %}
+			<p class="Listing-className">For Class: {{ book.subject }}</p>
+			<p class="Listing-editionNum">Edition Number: {{ book.edition_number }}</p>
+			<p class="Listing-datePosted">Date Posted: {{ book.date_posted }}</p>
+		</div>
+
+		<div class="Listing-priceArea">
+			<h3 class="Listing-price">Price: ${{ book.price }}</h3>
+			<div class="Listing-interestButtons">
+				 {% if user == book.seller %}
+				 <a href="{% url 'textbookFinder:remove_listing' book.id %}" class = "Listing-deleteListing">Remove Listing</a>
+				 {% if book.is_sold == True %}
+				 <a href="{% url 'textbookFinder:mark_sold' book.id %}" class = "Listing-markListing">Resume Selling</a>
+				 {% else %}
+				 <a href="{% url 'textbookFinder:mark_sold' book.id %}" class = "Listing-markListing">Mark as Sold</a>
+				 {% endif %}
+				 <a href="{% url 'textbookFinder:edit_listing' book.id %}" class = "Listing-markListing">Edit Listing</a>
+				 {% else %}
+				 <a href="{% url 'textbookFinder:cart_add' book.id %}" class="Listing-saveListing">Save Item</a>
+				 {% endif %}
+			</div>
+		</div>
+	</div> -->
+</div>
+{% endblock %}

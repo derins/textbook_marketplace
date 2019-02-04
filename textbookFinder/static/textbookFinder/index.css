@@ -1,0 +1,44 @@
+
+.Index-listing {
+  display: block;
+  color: black;
+}
+.Index-list {
+  padding-left: 32px;
+	padding-right: 32px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+  height: 200px;
+  width: 50%;
+  overflow-y: auto;
+}
+.Index-listing-item-remove:hover {
+  background-color: gray;
+  color: white;
+  cursor: pointer
+}
+.Index-listing-item {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+.Index-listing-item:hover {
+  background-color: gray;
+  color: white;
+}
+.Index-listing-item-image {
+  height: 100px;
+  width: 35%;
+}
+.Index-listing-item-text {
+  padding-left: 20px;
+  font-family: "Montserrat", Montserrat, sans-serif;
+  font-size: 30;
+}
+.Index-header {
+  padding-left: 100px;
+  font-family: "Montserrat", Montserrat, sans-serif;
+}

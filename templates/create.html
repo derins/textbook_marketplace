@@ -1,0 +1,28 @@
+
+    {% extends 'base.html' %}
+
+    {% load static %}
+{% load widget_tweaks %}
+    {% block content %}
+
+    {% if not user.is_authenticated %}
+        <li><a href="/">Log in or sign up to create a listing</a></li>
+    {% else %}
+    <div style = "padding-top: 30pt; padding-bottom: 30pt; background: #d4d4d4">
+    <div class = "card" style = "margin:auto; width: 70%; padding: 8pt">
+          <h3 style = "padding: 8pt; margin:auto;">Create a Listing</h3>
+    	<form  method="post" style = "margin:auto; display: flex; flex-direction: row; flex-wrap: wrap">
+            {% csrf_token %}
+        {% for field in form.visible_fields %}
+  			<div class="form-group" style = "width: 50%; padding: 8pt">
+  				{{ field.label_tag }}
+  				{% render_field field class="form-control" %}
+  			</div>
+  		    {% endfor %}
+    	   <button type="submit" class="btn btn-primary btn-block" style = " margin: auto; padding: 8pt" >Add listing</button>
+    	</form>
+    </div>
+  </div>
+    {% endif %}
+
+    {% endblock %}

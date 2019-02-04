@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}Edit My Account{% endblock %}
+
+{% block content %}
+
+<div style = "padding-top: 30pt; padding-bottom: 30pt; background: #d4d4d4">
+    <div class = "card" style = "margin:auto; width: 70%; padding: 8pt">
+        <h3 style = "padding: 8pt; margin:auto;">Edit Listing</h3>
+        <form  method="post" style = "margin:auto">
+            {% csrf_token %}
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap">
+              <div class="form-group" style = "width: 50%; padding: 8pt">
+                  {{ form.username.label_tag }}
+                  {% render_field form.username class="form-control" %}
+              </div>
+              <div class="form-group" style = "width: 50%; padding: 8pt">
+                  {{ form.email.label_tag }}
+                  {% render_field form.email class="form-control" %}
+              </div>
+              <div class="form-group" style = "width: 50%; padding: 8pt">
+                  {{ form.first_name.label_tag }}
+                  {% render_field form.first_name class="form-control" %}
+              </div>
+              <div class="form-group" style = "width: 50%; padding: 8pt">
+                  {{ form.last_name.label_tag }}
+                  {% render_field form.last_name class="form-control" %}
+              </div>
+              <div class="form-group" style = "width: 50%; padding: 8pt">
+                  {{ form.phone.label_tag }}
+                  {% render_field form.phone class="form-control" %}
+              </div>
+            </div>
+            <a href="{% url 'textbookFinder:password' user.id %}"> CLICK HERE to change password</a>
+            <button type="submit" class="btn btn-primary btn-block" style = " margin: auto; padding: 8pt" >Edit Account Info</button>
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
